@@ -25,8 +25,8 @@ int solve(vector<int>& nums, int k, int target) {
     int count = 0;
     int prefix = 0;
     while(j < nums.size()){
-        prefix += nums[j];
-        while(j-i+1 > k){
+        prefix += nums[j]; 
+        while(j-i+1 > k){ // when window exceeded the k size removing element from left of window.
             prefix -= nums[i];
             i++;
         }
