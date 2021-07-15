@@ -22,22 +22,22 @@ int solve(string s) {
     int count = 0;
     int maxone = 0;
     int maxlen = 0;
-    while (j < s.length()) {
+    while (j < s.length()) { // traversing over vector
         if (s[j] == '0') {
             count++;
         } else {
             maxone++;
         }
-        while (count > 1) {
+        while (count > 1) { // this check is happening because we need at most one 0 in our window . So, as we get another 0 in our current window we starting deleting 0 values from i pointer and increasing it 
             if (s[i] == '0') {
-                count--;
+                count--; // as we found 0 from left side we decrease our count.
             }
             i++;
         }
-        maxlen = max(maxlen, j - i + 1);
+        maxlen = max(maxlen, j - i + 1); // check maxlen
         j++;
     }
-    if (maxone < maxlen) {
+    if (maxone < maxlen) { // this check is because we can only swap values if there is enough 1's to swap with one 0 . if there is only one 1 in input how you're going to swap values thats's why
         return maxlen - 1;
     }
     return maxlen;
