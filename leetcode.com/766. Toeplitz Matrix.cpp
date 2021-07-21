@@ -30,7 +30,7 @@ m == matrix.length
 n == matrix[i].length
 1 <= m, n <= 20
 0 <= matrix[i][j] <= 99
- 
+
 
 Follow up:
 
