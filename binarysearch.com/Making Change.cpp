@@ -32,13 +32,5 @@ Explanation
 You can make this with a 5 cent coin and a 1 cent coin.
 */
 int solve(int n) {
-    int count = 0;
-    count += (n / 25);
-    n %= 25;
-    count += (n / 10);
-    n %= 10;
-    count += (n / 5);
-    n %= 5;
-    count += n;
-    return count;
+    return (n / 25 + (n % 25) / 10 + ((n % 25) % 10) / 5 + (n % 5));
 }
