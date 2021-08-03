@@ -32,24 +32,13 @@ Explanation
 You can make this with a 5 cent coin and a 1 cent coin.
 */
 int solve(int n) {
-    long int c = 0;
-    while(n != 0){
-        if(n >= 25){
-            int x = n/25;
-            n = n - x*25;
-            c += x;
-        }else if(n >= 10){
-            int x = n/10;
-            n = n - x*10;
-            c += x;
-        }else if(n >= 5){
-            int x = n/5;
-            n = n - x*5;
-            c += x;
-        }else{
-            c += n;
-            n = n - n;
-        }
-    }
-    return c;
+    int count = 0;
+    count += (n / 25);
+    n %= 25;
+    count += (n / 10);
+    n %= 10;
+    count += (n / 5);
+    n %= 5;
+    count += n;
+    return count;
 }
